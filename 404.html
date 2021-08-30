@@ -7,130 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>云小站</title>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
-    <link rel="stylesheet" href="lib/element-ui-2.15.5.css">
-    <link rel="stylesheet" href="css/z-style.css">
-    <link rel="stylesheet" href="css/layout.css">
+    <meta http-equiv="refresh" content="0;url=index.html">
 </head>
-<style>
-    html,
-    body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        overflow: hidden;
-    }
-</style>
 
 <body>
-    <div id="app">
-        <el-container>
-            <el-aside width="260px">
-                <div class="section logo">
-                    <img class="logo-icon" src="src/cloud-logo.png" alt="logo-icon.png">
-                    <!-- <img class="logo-text"src="src/cloud-text.png" alt="logo-text.png"> -->
-                    <span class="logo-text">YunApps</span>
-                </div>
-                <div class="section search">
-                    <z-search v-model="searchText"></z-search>
-                </div>
-                <el-menu class="z-scrollbar slim" :default-active="$route.path" @open="handleOpen" @close="handleClose" router>
-                    <el-menu-item index="/home">
-                        <i class="el-icon-house"></i>
-                        <span slot="title">首页</span>
-                    </el-menu-item>
-                    <el-menu-item index="/articles">
-                        <i class="el-icon-document"></i>
-                        <span slot="title">文章</span>
-                    </el-menu-item>
-                    <el-menu-item index="/projects">
-                        <i class="el-icon-connection"></i>
-                        <span slot="title">项目</span>
-                    </el-menu-item>
-                    <el-menu-item index="/apps">
-                        <i class="el-icon-cpu"></i>
-                        <span slot="title">应用</span>
-                    </el-menu-item>
-                    <el-menu-item index="/games">
-                        <i class="el-icon-coordinate"></i>
-                        <span slot="title">游戏</span>
-                    </el-menu-item>
-                    <el-menu-item index="/running">
-                        <i class="el-icon-switch-button"></i>
-                        <span slot="title">运行</span>
-                    </el-menu-item>
-                </el-menu>
-                <div class="section account">
-                    Account
-                </div>
-            </el-aside>
-            <el-container>
-                <el-header height="80px">
-                    Header
-                    <span class="title">Home</span>
-                </el-header>
-                <el-main class="z-scrollbar">
-                    Main
-                    <router-view></router-view>
-                    {{ message }}
-                    <div class="test">Test</div>
-                    <my-component></my-component>
-                    <el-button @click="visible = true">Button</el-button>
-                </el-main>
-            </el-container>
-        </el-container>
-        <el-dialog :visible.sync="visible" title="Hello world">
-            <p>Try Element</p>
-        </el-dialog>
-    </div>
+    404 not found
 </body>
-
-<script src="lib/jquery-3.6.0.min.js"></script>
-<script src="lib/vue-2.6.14.js"></script>
-<script src="lib/vue-http-loader-1.4.2.js"></script>
-<script src="lib/vue-router-3.5.2.js"></script>
-<script src="lib/element-ui-2.15.5.js"></script>
 <script>
-    const router = new VueRouter({
-        mode: 'history',
-        routes: [
-            { path: '/home', component: vueHttpLoader('pages/home.vue') },
-            { path: '/articles', component: vueHttpLoader('pages/articles.vue') },
-            { path: '/projects', component: vueHttpLoader('pages/projects.vue') },
-            { path: '/apps', component: vueHttpLoader('pages/apps.vue') },
-            { path: '/games', component: vueHttpLoader('pages/games.vue') },
-            { path: '/running', component: vueHttpLoader('pages/running.vue') },
-        ]
-    });
-
-    const app = new Vue({
-        el: '#app',
-        components: {
-            'my-component': vueHttpLoader('components/my-component.vue'),
-            'z-search': vueHttpLoader('components/z-search.vue'),
-        },
-        router: router,
-        data: {
-            // tailwind css apply
-            tw: {
-                btn : "font-bold py-2 px-4 rounded",
-                btnBlue : "bg-blue-500 hover:bg-blue-700 text-white"
-            },
-            // data
-            message: 'Hello Vue!',
-            visible: false,
-            isCollapse: true,
-            searchText: '111'
-        },
-        methods: {
-            handleOpen(key, keyPath) {
-                console.log(key, keyPath);
-            },
-            handleClose(key, keyPath) {
-                console.log(key, keyPath);
+    sendRequest("index.html");
+    function createXMLHttpRequest() {
+        if (window.XMLHttpRequest) {
+            XMLHttpR = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            try {
+                XMLHttpR = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    XMLHttpR = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) { }
             }
         }
-    });
+    }
+
+    function sendRequest(url) {
+        createXMLHttpRequest();
+        XMLHttpR.open("GET", url, true);
+        XMLHttpR.setRequestHeader("Content-Type", "text/html;charset=gb2312");
+        XMLHttpR.onreadystatechange = processResponse;
+        XMLHttpR.send(null);
+    }
+
+    function processResponse() {
+        if (XMLHttpR.readyState == 4 && XMLHttpR.status == 200) {
+            document.write(XMLHttpR.responseText);
+        }
+    }
 
 </script>
 
