@@ -1,0 +1,107 @@
+{
+  "id": "2759421",
+  "name": "yunapps",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6757487",
+      "name": "search",
+      "font_class": "chaxun",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "9302661",
+      "name": "interface_setting_line",
+      "font_class": "outline",
+      "unicode": "e86a",
+      "unicode_decimal": 59498
+    },
+    {
+      "icon_id": "16887194",
+      "name": "close",
+      "font_class": "close5",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "7705028",
+      "name": "sun",
+      "font_class": "sun",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    },
+    {
+      "icon_id": "21286631",
+      "name": "dark",
+      "font_class": "dark",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "23765446",
+      "name": "top",
+      "font_class": "px-zhidingpxed-f-e--copy",
+      "unicode": "e8c8",
+      "unicode_decimal": 59592
+    },
+    {
+      "icon_id": "22244350",
+      "name": "toggle",
+      "font_class": "toggle",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "4492222",
+      "name": "website",
+      "font_class": "website",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "23756961",
+      "name": "timeline",
+      "font_class": "timeline-copy",
+      "unicode": "e8c7",
+      "unicode_decimal": 59591
+    },
+    {
+      "icon_id": "10824431",
+      "name": "project",
+      "font_class": "project1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "17150256",
+      "name": "game",
+      "font_class": "game",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "17930123",
+      "name": "app",
+      "font_class": "app",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "20217533",
+      "name": "35 Article filled",
+      "font_class": "article",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "21760734",
+      "name": "home",
+      "font_class": "xuanzhongshangcheng",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+.z-container {
+    width  : 100%;
+    height : 100%;
+    display: flex;
+
+    &.vertical {
+        flex-flow: column;
+    }
+}
+
+.z-scrollbar {
+    overflow: overlay;
+
+    &::-webkit-scrollbar {
+        width  : 8px;
+        height : 8px;
+        z-index: 1;
+    }
+    &.slim::-webkit-scrollbar {
+        width  : 6px;
+        height : 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius   : 4px;
+        background-color: rgba(144, 147, 153, 0);
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(144, 147, 153, .3);
+
+            &:hover {
+                background-color: rgba(144, 147, 153, .5);
+            }
+        }
+    }
+}
